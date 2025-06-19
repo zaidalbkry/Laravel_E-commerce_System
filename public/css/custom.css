@@ -1,0 +1,89 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25vw; /* 25% of the viewport width */
+  height: 100vh; /* Full vertical height of the viewport */
+  background: #ffffff; /* Dark background; adjust as needed */
+  transform: translateX(100%); /* Initially hidden off-screen to the right */
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000; /* Ensures the sidebar appears over other content */
+}
+
+.sidebar.active {
+  transform: translateX(0); /* Slide into view when active */
+}
+/* Styling for the close button inside the sidebar */
+.sidebar .close-menu {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* You can adjust the position if needed */
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* Reset default list styles for the sidebar */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style each list item */
+.sidebar ul li {
+  width: 80%;              /* Limit the width to 80% of the sidebar */
+  margin: 10px auto;       /* Center items horizontally and add vertical spacing */
+  padding: 10px;           /* Internal spacing for a clean look */
+  border: 1px solid #cfa671;  /* Border around each item */
+  border-radius: 5px;      /* Rounded corners for a modern appearance */
+  text-align: center;      /* Center text within the item */
+  background-color: #cfa671;  /* A subtle background to contrast with the sidebar */
+  transition: background-color 0.3s ease;
+}
+
+/* Change background color on hover for interactivity */
+.sidebar ul li:hover {
+  background-color: #cfa671;
+}
+
+/* Ensure the links fill the entire list item and inherit styles */
+.sidebar ul li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;  /* White text for contrast */
+}
+
+
+.favorite-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.favorite-btn .fa-heart {
+    font-size: 24px;
+    color: #ccc; /* ✅ لون القلب مجوف */
+    transition: color 0.3s ease-in-out;
+}
+
+.favorite-active .fa-heart {
+    color: red; /* ✅ يتحول إلى اللون الأحمر عند الضغط أو عند تحميل الصفحة */
+}
+.custom-search-btn {
+    background-color: transparent;
+    border: 2px solid #d0a772; /* ذهبي ناعم */
+    color: #d0a772;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-search-btn:hover {
+    background-color: #d0a772;
+    color: white;
+}
+
+

@@ -1,0 +1,93 @@
+@extends('frontend.layout')
+
+@section('css-custom-files')
+<style>
+
+
+</style>
+@endsection
+
+
+
+@section('content')
+    <div class="container main-profile-menu">
+        <div class="main-header-profile p-4 d-flex flex-column align-items-center text-center">
+            <h3 class="mb-3">Name: {{ Auth::user()->name }}</h3>
+            <h3 class="mb-3">Email: {{ Auth::user()->email }}</h3>
+
+            <div class="menu">
+                <a class="btn btn-danger my-3" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="bx bx-log-out"></i> Logout
+                </a>
+            </div>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+<!-- ✅ نموذج تعديل معلومات المستخدم -->
+<div id="edit-info-form" style="display: none; width: 100%; max-width: 400px;" class="mt-3">
+    <form method="POST" action="{{ route('profile.update') }}">
+        @csrf
+        @method('PUT')
+
+        <div class="mb-3">
+            <label for="name">الاسم:</label>
+            <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">حفظ التغييرات</button>
+    </form>
+</div>
+
+<!-- ✅ زر إظهار نموذج تعديل المعلومات -->
+<button class="btn btn-warning mt-3" onclick="toggleEditInfoForm()">تعديل المعلومات الشخصية</button>
+
+            <!-- ✅ زر إظهار فورم تغيير كلمة السر -->
+            <button class="btn btn-primary mt-3" onclick="togglePasswordForm()">تغيير كلمة المرور</button>
+
+            <!-- ✅ نموذج تغيير كلمة السر (مخفي افتراضيًا) -->
+            <div id="password-form" style="display: none; width: 100%; max-width: 400px;" class="mt-3">
+                <form method="POST" action="{{ route('password.update') }}">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="current_password">كلمة السر الحالية:</label>
+                        <input type="password" class="form-control" name="current_password" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="new_password">كلمة السر الجديدة:</label>
+                        <input type="password" class="form-control" name="new_password" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="new_password_confirmation">تأكيد كلمة السر الجديدة:</label>
+                        <input type="password" class="form-control" name="new_password_confirmation" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">حفظ التغيير</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+@endsection
+
+<script>
+    function togglePasswordForm() {
+        let form = document.getElementById('password-form');
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function toggleEditInfoForm() {
+    let form = document.getElementById('edit-info-form');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+}
+
+</script>
