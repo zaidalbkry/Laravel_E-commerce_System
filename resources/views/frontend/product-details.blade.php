@@ -106,16 +106,16 @@
                         <br>
 @if($relatedProducts->count())
     <div class="mt-5">
-        <h4 class="fw-bold"> Related Products</h4>
+        <h4 class="fw-bold">Related Products</h4>
         <div class="row">
-            @foreach($relatedProducts as $product)
+            @foreach($relatedProducts as $relatedProduct)
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="gallery-single fix">
-                        <img src="{{ asset('storage/' . ($product->image ?? 'default.jpg')) }}" class="img-fluid" alt="{{ $product->name }}" />
+                        <img src="{{ asset('storage/' . ($relatedProduct->image ?? 'default.jpg')) }}" class="img-fluid" alt="{{ $relatedProduct->name }}" />
                         <div class="why-text">
-                            <h4>{{ $product->name }}</h4>
-                            <h5>${{ $product->price }}</h5>
-                            <a href="{{ route('product.show', $product->id) }}" class="show-product">Show Product</a>
+                            <h4>{{ $relatedProduct->name }}</h4>
+                            <h5>${{ $relatedProduct->price }}</h5>
+                            <a href="{{ route('product.show', $relatedProduct->id) }}" class="show-product">Show Product</a>
                         </div>
                     </div>
                 </div>
@@ -123,6 +123,7 @@
         </div>
     </div>
 @endif
+
 
                        <br>
                        <br>
@@ -138,7 +139,7 @@
         @endfor
     </div>
 
-    <textarea id="review-co mment" class="form-control mt-3" rows="3" placeholder="Write a review..." style="display: none;"></textarea>
+    <textarea id="review-comment" class="form-control mt-3" rows="3" placeholder="Write a review..." style="display: none;"></textarea>
     <button id="submit-review" class="btn btn-success mt-3" data-product-id="{{ $product->id }}" style="display: none;">Submit Review</button>
 </div>
 
@@ -299,7 +300,7 @@
             document.getElementById("cart-count").innerText = cart.length;        
         }
       
-document.querySelectorAll('.favorite-btn').forEach(btn => {
+ document.querySelectorAll('.favorite-btn').forEach(btn => {
     btn.addEventListener('click', function () {
         let productId = this.getAttribute('data-product-id');
         let heartIcon = this.querySelector('.fa-heart'); // ✅ تحديد العنصر الصحيح
@@ -319,13 +320,13 @@ document.querySelectorAll('.favorite-btn').forEach(btn => {
               }
           }).catch(error => console.error('Error:', error));
     });
-});
+ });
 
 
 
         
 
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const stars = document.querySelectorAll(".star");
     const commentBox = document.getElementById("review-comment");
     const submitButton = document.getElementById("submit-review");
@@ -396,9 +397,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-});
+ });
 
-
-    </script>
+</script>
 
 @endsection

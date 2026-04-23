@@ -7,67 +7,22 @@
 @endsection
 
 @section('content')
+<div class="mx-auto max-w-3xl rounded-3xl bg-white p-8 shadow-soft">
+    <h1 class="text-2xl font-bold text-mint-900">Contact</h1>
+    <p class="mt-2 text-slate-600">Send your message and our team will respond as soon as possible.</p>
 
-<!-- Start All Pages -->
-<div class="all-page-title page-breadcrumb">
-	<div class="container text-center">
-		<div class="row">
-			<div class="col-lg-12">
-				<h1>Contact</h1>
-			</div>
-		</div>
-	</div>
+    <form id="contactFogfdrm" action="{{route('new-msg.store')}}" method="POST" class="mt-6 space-y-4">
+        @csrf
+        <div>
+            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full rounded-xl border-mint-200">
+        </div>
+        <div>
+            <input type="text" id="phone" name="phone_number" placeholder="Your phone" required class="w-full rounded-xl border-mint-200">
+        </div>
+        <div>
+            <textarea id="message" name="messages" placeholder="Your Message" rows="4" required class="w-full rounded-xl border-mint-200"></textarea>
+        </div>
+        <button class="fb-btn w-full" id="submit" type="submit">Send Message</button>
+    </form>
 </div>
-<!-- End All Pages -->
-
-<!-- Start Contact -->
-<div class="contact-box">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="heading-title text-center">
-					<h2>Contact</h2>
-					<p>Send your message, and one of our customer service staff will respond to you as soon as possible.</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12">
-				<form id="contactFogfdrm" action="{{route('new-msg.store')}}" method="POST">
-					@csrf
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
-								<div class="help-block with-errors"></div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<input type="text" placeholder="Your phone" id="phone" class="form-control" name="phone_number" required data-error="Please enter your phone">
-								<div class="help-block with-errors"></div>
-							</div>
-						</div>
-
-						<div class="col-md-12">
-							<div class="form-group">
-								<textarea class="form-control" id="message"  name="messages" placeholder="Your Message" rows="2" data-error="Write your message" required></textarea>
-								<div class="help-block with-errors"></div>
-							</div>
-							<div class="submit-button text-center">
-								<button class="btn btn-common" id="submit" type="submit">Send Message</button>
-								<div id="msgSubmit" class="h3 text-center hidden"></div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End Contact -->
-
-
 @endsection

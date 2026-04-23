@@ -5,6 +5,17 @@
     <link href="{{ URL::asset('assets/plugins/owl-carousel/owl.carousel.css') }}" rel="stylesheet" />
     <!-- Maps css -->
     <link href="{{ URL::asset('assets/plugins/jqvmap/jqvmap.min.css') }}" rel="stylesheet">
+    <style>
+        .sales-card {
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+            border: 0;
+        }
+        .card {
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
 @endsection
 
 @section('page-header')

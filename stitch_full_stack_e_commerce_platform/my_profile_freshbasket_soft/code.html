@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FreshBasket - My Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1d",
+                    "surface-tint": "#1b6b4f",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary": "#416656",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#294e3f",
+                    "outline-variant": "#bec9c2",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-container": "#c3ecd7",
+                    "on-tertiary-fixed": "#161c22",
+                    "on-secondary-fixed": "#002115",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#edeeef",
+                    "on-primary-fixed-variant": "#00513a",
+                    "error-container": "#ffdad6",
+                    "background": "#f8f9fa",
+                    "on-secondary-container": "#476c5b",
+                    "primary-fixed-dim": "#8bd6b4",
+                    "on-primary-container": "#247156",
+                    "inverse-primary": "#8bd6b4",
+                    "outline": "#6f7973",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#002115",
+                    "tertiary-container": "#dee4ec",
+                    "secondary-fixed-dim": "#a8cfbc",
+                    "on-surface-variant": "#3f4943",
+                    "on-surface": "#191c1d",
+                    "primary-container": "#a7f3d0",
+                    "surface-dim": "#d9dadb",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-tertiary-fixed-variant": "#41474e",
+                    "primary": "#1b6b4f",
+                    "surface-container-low": "#f3f4f5",
+                    "tertiary": "#595f66",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary-fixed-dim": "#c1c7cf",
+                    "inverse-surface": "#2e3132",
+                    "primary-fixed": "#a6f2cf",
+                    "on-tertiary-container": "#5f666c",
+                    "tertiary-fixed": "#dde3eb",
+                    "secondary-fixed": "#c3ecd7",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "2rem",
+                    "xs": "0.5rem",
+                    "xl": "4rem",
+                    "sm": "1rem",
+                    "unit": "4px",
+                    "md": "1.5rem",
+                    "lg": "2.5rem",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.025em", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.025em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f8f9fa; color: #191c1d; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-emerald-50/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-emerald-100/50 dark:border-emerald-900/30 shadow-sm shadow-emerald-200/20 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-emerald-800 dark:text-emerald-200 font-['Plus_Jakarta_Sans']">FreshBasket</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-emerald-600/70 dark:text-emerald-400/70 font-['Plus_Jakarta_Sans'] font-semibold hover:bg-emerald-100/50 transition-colors px-3 py-2 rounded-lg" href="#">Home</a>
+<a class="text-emerald-600/70 dark:text-emerald-400/70 font-['Plus_Jakarta_Sans'] font-semibold hover:bg-emerald-100/50 transition-colors px-3 py-2 rounded-lg" href="#">Browse</a>
+<a class="text-emerald-600/70 dark:text-emerald-400/70 font-['Plus_Jakarta_Sans'] font-semibold hover:bg-emerald-100/50 transition-colors px-3 py-2 rounded-lg" href="#">Deals</a>
+<a class="text-emerald-700 dark:text-emerald-300 font-['Plus_Jakarta_Sans'] font-semibold px-3 py-2 rounded-lg bg-emerald-100/30" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-emerald-900 dark:text-emerald-100 hover:bg-emerald-100/50 transition-colors rounded-full active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+</button>
+<button class="p-2 text-emerald-900 dark:text-emerald-100 hover:bg-emerald-100/50 transition-colors rounded-full active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-12">
+<div class="mb-12 flex items-center gap-6">
+<div class="w-24 h-24 rounded-full border-4 border-white shadow-lg overflow-hidden flex-shrink-0">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Soft portrait of a friendly woman in a bright sunlit kitchen, natural warm lighting, organic and calm atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqqfHspfdw8Km0pW5xW3tg61m3Y0ZxuC24ZsgCICxoeojAzIAYgYeQndO29h1uTbxZIKaTmxoQIMPT6Rd5ctJRN4oggP8BGIjXA_ZFsqnjIvDH0_y9xWRs5jO0wlvaalWMDJmyiTdWafoO2s-4M6dElRyqL0qTPMdzya5ExRChOBQvVeQukJCrAnxdh8q0FBjmUKyVjCkQYL1zftZ6uKtPc-6vv5-I9xQ7t_7vgBif1we1X-D53JYIedNisXs8rxl2rGR_Z-Ountg"/>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-1">Welcome back, Elara</h1>
+<p class="text-on-surface-variant font-body-md">Managing your sustainable lifestyle since 2023.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Main Content Area -->
+<div class="md:col-span-2 space-y-8">
+<!-- Profile Information Card -->
+<section class="bg-white rounded-xl p-8 shadow-[0_10px_40px_rgba(167,243,208,0.1)] border border-emerald-50">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-tint">account_circle</span>
+                            Personal Details
+                        </h2>
+</div>
+<div class="space-y-6">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<tbody class="divide-y divide-emerald-50">
+<tr>
+<td class="py-4 font-label-md text-label-md text-outline">FULL NAME</td>
+<td class="py-4 font-body-lg text-body-lg text-on-surface">Elara June Basket</td>
+</tr>
+<tr>
+<td class="py-4 font-label-md text-label-md text-outline">EMAIL ADDRESS</td>
+<td class="py-4 font-body-lg text-body-lg text-on-surface">elara.june@freshbasket.com</td>
+</tr>
+<tr>
+<td class="py-4 font-label-md text-label-md text-outline">PHONE</td>
+<td class="py-4 font-body-lg text-body-lg text-on-surface">+1 (555) 234-5678</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Edit Profile Form (Inline Style) -->
+<section class="bg-secondary-container/20 rounded-xl p-8 border border-secondary-container">
+<h3 class="font-headline-md text-headline-md text-on-secondary-container mb-6">Update Your Profile</h3>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-secondary-container px-4">Full Name</label>
+<input class="w-full h-14 px-6 rounded-full bg-white border-transparent focus:ring-2 focus:ring-primary-container focus:border-transparent text-body-md transition-all shadow-sm" placeholder="Elara June Basket" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-secondary-container px-4">Email</label>
+<input class="w-full h-14 px-6 rounded-full bg-white border-transparent focus:ring-2 focus:ring-primary-container focus:border-transparent text-body-md transition-all shadow-sm" placeholder="elara.june@freshbasket.com" type="email"/>
+</div>
+</div>
+<div class="flex justify-end pt-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md hover:shadow-lg hover:shadow-primary-container/40 transition-all active:scale-95" type="submit">Save Changes</button>
+</div>
+</form>
+</section>
+</div>
+<!-- Sidebar Actions -->
+<div class="space-y-6">
+<div class="bg-emerald-50/50 rounded-xl p-6 border border-emerald-100">
+<h3 class="font-label-md text-label-md text-primary mb-4 px-2 uppercase tracking-widest">Account Security</h3>
+<div class="space-y-3">
+<button class="w-full flex items-center justify-between px-6 py-4 bg-white rounded-full text-secondary hover:bg-secondary-container/30 transition-all shadow-sm group">
+<span class="font-label-md">Edit Profile</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-6 py-4 bg-white rounded-full text-secondary hover:bg-secondary-container/30 transition-all shadow-sm group">
+<span class="font-label-md">Change Password</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">lock_reset</span>
+</button>
+<button class="w-full flex items-center justify-between px-6 py-4 bg-error-container text-on-error-container rounded-full hover:bg-error-container/80 transition-all shadow-sm group mt-8">
+<span class="font-label-md">Log Out</span>
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-6 relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Basket Pro</h4>
+<p class="text-body-md text-on-surface-variant mb-4">You've saved 42kg of CO2 this month!</p>
+<div class="w-full h-3 bg-white rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-primary-container"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-emerald-50 dark:bg-slate-900 py-12 mt-20 border-t border-emerald-100 dark:border-emerald-800 full-width">
+<div class="w-full flex flex-col items-center gap-6 px-8 max-w-7xl mx-auto">
+<div class="text-lg font-black text-emerald-900 dark:text-emerald-100 font-['Plus_Jakarta_Sans']">FreshBasket</div>
+<div class="flex gap-8">
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-all duration-300" href="#">Privacy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-all duration-300" href="#">Terms</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-all duration-300" href="#">Sustainability</a>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-emerald-800 dark:text-emerald-200">© 2024 FreshBasket Market. Sustainably Sourced.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl md:hidden border-t border-emerald-50 shadow-[0_-10px_40px_rgba(167,243,208,0.15)] rounded-t-[40px]">
+<a class="flex flex-col items-center justify-center text-emerald-400 dark:text-emerald-600 px-5 py-2 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold tracking-tight">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-400 dark:text-emerald-600 px-5 py-2 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="search_check">search_check</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold tracking-tight">Browse</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-400 dark:text-emerald-600 px-5 py-2 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold tracking-tight">Deals</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-100 rounded-full px-5 py-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold tracking-tight">Profile</span>
+</a>
+</nav>
+</body></html>

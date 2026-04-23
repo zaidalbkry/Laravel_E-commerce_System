@@ -1,77 +1,19 @@
 @extends('frontend.layout')
 
-@section('css-custom-files')
-    <style>
-        .wrapper {
-            width: 95%;
-            text-align: center;
-            margin: 35px 0px;
-        }
-
-        .wrapper #products {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-column-gap: 1.5em;
-            padding: 2em 0;
-            justify-content: space-evenly;
-        }
-
-        .wrapper .card {
-            background-color: #ffffff;
-            max-width: 18em;
-            margin-top: 1em;
-            padding: 1em;
-            border-radius: 5px;
-            box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
-        }
-
-        .wrapper img {
-            max-width: 100%;
-            object-fit: contain;
-            height: 15em;
-        }
-
-        .wrapper .container {
-            padding-top: 1em;
-            color: #110f29;
-        }
-    </style>
-@endsection
-
 @section('content')
-    <!-- ✅ عنوان صفحة البحث -->
-    <div class="all-page-title page-breadcrumb">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>نتائج البحث</h1>
-                </div>
-            </div>
+    <h1 class="mb-6 text-2xl font-bold text-mint-900">Search Results</h1>
+    @if($products->isEmpty())
+        <p class="rounded-xl bg-yellow-50 px-4 py-3 text-yellow-800">No matching products found.</p>
+    @else
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach ($products as $product)
+                <article class="fb-card">
+                    <img src="{{ asset('storage/' . ($product->image ?? 'default.jpg')) }}" alt="{{ $product->name }}" class="h-52 w-full rounded-xl object-cover">
+                    <h3 class="mt-4 text-lg font-bold">{{ $product->name }}</h3>
+                    <p class="text-mint-700">${{ $product->price }}</p>
+                    <a href="{{ route('product.show', $product->id) }}" class="fb-btn mt-4 w-full">Show Product</a>
+                </article>
+            @endforeach
         </div>
-    </div>
-
-    <div class="container">
-        @if($products->isEmpty())
-            <p>لم يتم العثور على منتجات مطابقة.</p>
-        @else
-            <div class="wrapper">
-                <div class="row">
-                    @foreach ($products as $product)
-                    <div class="col-lg-4 col-md-6 special-grid">
-                        <div class="gallery-single fix">
-                            <div class="image-container">
-                                <img src="{{ asset('storage/' . ($product->image ?? 'default.jpg')) }}" alt="{{ $product->name }}">
-                            </div>
-                            <div class="why-text">
-                                <h5>{{ $product->name }}</h5>
-                                <h5>${{ $product->price }}</h5>
-                                <a href="{{ route('product.show', $product->id) }}" class="show-product">Show Product</a>
-                            </div>
-                        </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        @endif
-    </div>
+    @endif
 @endsection

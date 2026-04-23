@@ -40,7 +40,10 @@ public function index3(Request $request)
     $products = $query->paginate(12); // ✅ عرض 12 منتجًا لكل صفحة
 
     return view('frontend.all-products', compact('products', 'categories'));
-}public function filteredResults(Request $request)
+}
+
+
+public function filteredResults(Request $request)
 {
     $query = Product::query();
 
@@ -117,9 +120,9 @@ public function show($id)
 {
     $product = Product::findOrFail($id);
     $favorites = auth()->check() ? Favorite::where('user_id', auth()->id())->pluck('product_id')->toArray() : [];
-
+    $productwithreviews = Product::with('reviews')->find($id);
     // ✅ حساب متوسط التقييمات لهذا المنتج
-    $averageRating = $product->reviews()->avg('rating') ?? 0;
+    $averageRating = $productwithreviews->reviews()->avg('rating') ?? 0;
         // المنتجات المترابطة: نفس التصنيف، بدون تكرار المنتج الحالي
     $relatedProducts = Product::where('category_id', $product->category_id)
                         ->where('id', '!=', $product->id)

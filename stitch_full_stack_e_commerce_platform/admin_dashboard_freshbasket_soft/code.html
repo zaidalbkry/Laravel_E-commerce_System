@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FreshBasket Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fa;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1d",
+                        "surface-tint": "#1b6b4f",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#416656",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#294e3f",
+                        "outline-variant": "#bec9c2",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#c3ecd7",
+                        "on-tertiary-fixed": "#161c22",
+                        "on-secondary-fixed": "#002115",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed-variant": "#00513a",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9fa",
+                        "on-secondary-container": "#476c5b",
+                        "primary-fixed-dim": "#8bd6b4",
+                        "on-primary-container": "#247156",
+                        "inverse-primary": "#8bd6b4",
+                        "outline": "#6f7973",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002115",
+                        "tertiary-container": "#dee4ec",
+                        "secondary-fixed-dim": "#a8cfbc",
+                        "on-surface-variant": "#3f4943",
+                        "on-surface": "#191c1d",
+                        "primary-container": "#a7f3d0",
+                        "surface-dim": "#d9dadb",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "primary": "#1b6b4f",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary": "#595f66",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed": "#a6f2cf",
+                        "on-tertiary-container": "#5f666c",
+                        "tertiary-fixed": "#dde3eb",
+                        "secondary-fixed": "#c3ecd7",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "2rem",
+                        "xs": "0.5rem",
+                        "xl": "4rem",
+                        "sm": "1rem",
+                        "unit": "4px",
+                        "md": "1.5rem",
+                        "lg": "2.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.025em", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.025em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-surface-container-low fixed h-screen left-0 top-0 z-40 flex flex-col border-r border-secondary-container/20">
+<div class="p-8">
+<span class="text-display-lg text-primary font-bold tracking-tighter block mb-1">FreshBasket</span>
+<span class="text-label-md text-secondary/60 uppercase tracking-widest">Management Hub</span>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<div class="px-4 py-2">
+<span class="text-label-md text-outline/50">GENERAL</span>
+</div>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full bg-primary-container text-on-primary-container transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">grid_view</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Users</span>
+</a>
+<div class="px-4 py-6">
+<span class="text-label-md text-outline/50">SYSTEM</span>
+</div>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="p-6 m-4 bg-primary-container/30 rounded-xl">
+<p class="text-label-md text-on-primary-container font-medium mb-3">Eco Monitor v2.1</p>
+<div class="w-full bg-on-primary-container/10 h-2 rounded-full overflow-hidden">
+<div class="bg-primary w-2/3 h-full rounded-full"></div>
+</div>
+<p class="text-[12px] text-on-primary-container/70 mt-2">67% sustainability target met</p>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-72 p-8 overflow-y-auto">
+<!-- Top Header -->
+<header class="flex justify-between items-center mb-12">
+<div>
+<h1 class="text-display-lg font-display-lg text-on-surface">Overview</h1>
+<p class="text-body-md text-on-surface-variant">Welcome back, Admin. Here is what's happening today.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-12 pr-6 py-3 bg-surface-container-high border-none rounded-full w-64 focus:ring-2 focus:ring-primary focus:bg-surface-container-highest transition-all" placeholder="Global search..." type="text"/>
+</div>
+<button class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+<img alt="Admin Profile" class="w-10 h-10 rounded-full border-2 border-primary-container" data-alt="professional headshot of a smiling young male administrator with a clean business casual look against a soft blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9_74GdrvT4_enS7UCnKrkadMYmrFTBwHhSh0OXKqwAS-k90cNC23R14K_aYmtGVe5U_gY6SQ9C3uMFE8lFj49d4EYNB0u6DC3l9pKOxmga8nOfYHjflN7xoTQlPVAfn98HHTC2MxHb8L4B90icHVmM6WOZFfZw0C8je-FCx2JtQ_xMXK0zWuHOrdxcJF0xU0NHqVvWH1Tt2O1_HO-i3n27JpOD4ADgBrjviyOMteyE8teeWBm8dO0FEjg8DKPxNuGfzPD-VuEqCY"/>
+<div class="hidden lg:block">
+<p class="text-label-md text-on-surface leading-none">James Orchard</p>
+<p class="text-[12px] text-on-surface-variant">Senior Manager</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_10px_40px_rgba(27,107,79,0.05)] border border-primary-container/10">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container/40 rounded-2xl text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<span class="text-primary font-bold text-label-md">+14.2%</span>
+</div>
+<p class="text-on-surface-variant text-label-md">Weekly Revenue</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">$54,230</h3>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_10px_40px_rgba(27,107,79,0.05)] border border-primary-container/10">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container/40 rounded-2xl text-secondary">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<span class="text-secondary font-bold text-label-md">+8%</span>
+</div>
+<p class="text-on-surface-variant text-label-md">Active Orders</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">1,204</h3>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_10px_40px_rgba(27,107,79,0.05)] border border-primary-container/10">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-container/40 rounded-2xl text-tertiary">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<span class="text-error font-bold text-label-md">-2.4%</span>
+</div>
+<p class="text-on-surface-variant text-label-md">Total Products</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">4,852</h3>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_10px_40px_rgba(27,107,79,0.05)] border border-primary-container/10">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container/40 rounded-2xl text-primary">
+<span class="material-symbols-outlined" data-weight="fill">eco</span>
+</div>
+<span class="text-primary font-bold text-label-md">Premium</span>
+</div>
+<p class="text-on-surface-variant text-label-md">Sustainability Score</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">94/100</h3>
+</div>
+</div>
+<!-- Main Inventory & Orders View -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Recent Inventory (Products CRUD Preview) -->
+<div class="xl:col-span-2 bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.02)] border border-secondary-container/10 overflow-hidden">
+<div class="p-8 border-b border-surface-container flex justify-between items-center bg-surface-container-lowest/50">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Product Inventory</h2>
+<p class="text-body-md text-on-surface-variant">Manage and track your organic produce catalog.</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full flex items-center gap-2 hover:bg-surface-tint transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+<span class="text-label-md">Add Product</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-5 text-label-md text-outline font-semibold">Product</th>
+<th class="px-8 py-5 text-label-md text-outline font-semibold">Category</th>
+<th class="px-8 py-5 text-label-md text-outline font-semibold">Stock</th>
+<th class="px-8 py-5 text-label-md text-outline font-semibold">Price</th>
+<th class="px-8 py-5 text-label-md text-outline font-semibold">Status</th>
+<th class="px-8 py-5 text-label-md text-outline font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-5 flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-xl flex items-center justify-center">
+<img alt="Organic Honey" class="w-10 h-10 object-contain" data-alt="close-up of a glass jar of organic wild flower honey with a wooden dipper on a white marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA43or-xfDCMriYys48sL3SKMQCu29fWTHL2jjIMPq2-TTP_z-N_ag0qc7iQzK4urvhnAYu96m6ErsFXkD685a86gOnkI3fvBTJsFWupcTGfT1xf99IVgkPHe__q1B5T-Z38utPoA3O-h5fETnFjM1UdAbJgRj0yHMDO9NfW73J4XnLk2kkjOs9Ahtqh1vfeT9-Abb0nOeiUuirOTrxOmLkZalUNJeC5jFQLJkDt07nc5lwVrevpBlzAY9cUAotdx58HH9c0ENc2p8"/>
+</div>
+<span class="text-body-md font-medium text-on-surface">Wild Flower Honey</span>
+</td>
+<td class="px-8 py-5 text-body-md text-on-surface-variant">Pantry</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="w-24 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary w-[85%] h-full rounded-full"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">142 units</span>
+</div>
+</td>
+<td class="px-8 py-5 text-body-md font-semibold text-on-surface">$12.50</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-primary-container/30 text-primary rounded-full text-[12px] font-bold">In Stock</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="text-outline hover:text-error transition-colors ml-3">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-5 flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-xl flex items-center justify-center">
+<img alt="Fresh Kale" class="w-10 h-10 object-contain" data-alt="vibrant bunch of curly green organic kale leaves against a light neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4zF1xbN6UlovbFcyMWB-mV4j9LBWqjy9HDLx8POtusVZJxKUqgo9PJuvAmujwfSq0oqSFTcBYrhPK8934eVpyw4FyR0bTllTgvOwS8Dz_R9bc90kvH3MSlKjWaSxBoTWKLNexhyauQJvjSEAht8s0aKodPLWEKIVaoag6BoxpQspuOr9umHpV3M3SNbYnWOJjYMEL9CDbjJ0TuI3vatMNUwktTub71uhrnoP4EjuuOnucCUuPn_annzN8dJVDPmEByk5X82zZRo"/>
+</div>
+<span class="text-body-md font-medium text-on-surface">Curly Green Kale</span>
+</td>
+<td class="px-8 py-5 text-body-md text-on-surface-variant">Vegetables</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="w-24 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-error w-[15%] h-full rounded-full"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">8 units</span>
+</div>
+</td>
+<td class="px-8 py-5 text-body-md font-semibold text-on-surface">$3.20</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-error-container/30 text-error rounded-full text-[12px] font-bold">Low Stock</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="text-outline hover:text-error transition-colors ml-3">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-5 flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-xl flex items-center justify-center">
+<img alt="Organic Milk" class="w-10 h-10 object-contain" data-alt="modern minimalist glass bottle of fresh organic milk with a simple green label on a light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXE2XHlGzrxFTP44dcWCzTgJy2hcTucbwZGgjj_lp2PNOU7JL9tXCX5pcmTEeFpcvXnP2-05-3DzAFav1g9itHo6lUXzInuLPMPMS923k5bqgCCWvr5zucSGwKQpwg8abbY43KffRGb0YyovOMAQNIlN918wVgFzBA2YE1R9CZqOSevH60pbY836IEW1ibYdq5F1iFMBbGNElS46Uk22K9IT9OEk1eX6R_Mf4Ouf3vfB4bZWLWyIL_ut4SOSwQHbMWpFRQo3NBvPM"/>
+</div>
+<span class="text-body-md font-medium text-on-surface">A2 Organic Milk</span>
+</td>
+<td class="px-8 py-5 text-body-md text-on-surface-variant">Dairy</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="w-24 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary w-[45%] h-full rounded-full"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">42 units</span>
+</div>
+</td>
+<td class="px-8 py-5 text-body-md font-semibold text-on-surface">$5.80</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-primary-container/30 text-primary rounded-full text-[12px] font-bold">In Stock</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="text-outline hover:text-error transition-colors ml-3">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-surface-container-low/30 text-center">
+<button class="text-primary font-bold text-label-md hover:underline">View Full Catalog</button>
+</div>
+</div>
+<!-- Recent Customers (Users CRUD Preview) -->
+<div class="space-y-8">
+<div class="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.02)] border border-secondary-container/10 p-8">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-headline-md font-headline-md text-on-surface">Top Customers</h2>
+<button class="text-primary material-symbols-outlined">more_vert</button>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<div class="relative">
+<img alt="Customer Sarah" class="w-12 h-12 rounded-full" data-alt="portrait of a young woman with a friendly expression and curly hair in soft outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbyGCk70dySuJsFSsLq4_MPSuwO4_WR_COKf_5kiPLjWgipJ6jHm2HVNjw3cQiojMGr_wcVi58ZYNdonEaHe6S5RW9JFY88mpE1tF274G9dVJveWpeAqDFDM5oOeNSwMEZTSifPSjDu2irHp8QC3gGgGETf0MwmCLsnYqPJcAS5loGwV1-Wgb7AcJ4GsTIx3qGQNATgA4XduvUzNCRWmaCFVqTnArlTQwyBuAYSHIv2_5FA128fkWvbQnkLmWr_B8akD6Vq3I_0aY"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary border-2 border-white rounded-full"></div>
+</div>
+<div class="flex-1">
+<p class="text-body-md font-semibold text-on-surface leading-none">Sarah Jenkins</p>
+<p class="text-[12px] text-on-surface-variant">Platinum Member • 12 Orders</p>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-container/20 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="relative">
+<img alt="Customer Michael" class="w-12 h-12 rounded-full" data-alt="professional portrait of a middle-aged man with short hair and a clean-shaven face in a studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkfcKsoimoFmnZ0bokVqXyt-cmWC31iepoHgLY7sd-EE0Tk8fLZKINn_GKpUw2HtjIpRuMKzzAs9aaQCPH5dCVajmM9REIUqw4DjOcUr1gtt7snlqHf84z9tgafKrzXeQxbvGtdIQ7siyvqA87RYqW5J91ZZGSnWkhTseXRmjHowjdTGWxbEvSczr-RhPtw60Bj2wFOaisYxisZx7D7PsgCnif05ByvtJTmmhnYhx55OIYVU8lIqqFBcXq-etU4b2pIfJCtkB-ZSU"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary border-2 border-white rounded-full"></div>
+</div>
+<div class="flex-1">
+<p class="text-body-md font-semibold text-on-surface leading-none">Michael Ross</p>
+<p class="text-[12px] text-on-surface-variant">Gold Member • 8 Orders</p>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-container/20 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="relative">
+<img alt="Customer Emily" class="w-12 h-12 rounded-full" data-alt="serene portrait of a woman with long straight dark hair looking directly at the camera with a soft smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS7NQxn8STznrVBpElIFXq3soNBESmODXHVdf3q8wOOoHfQteNFZeR0f7_IQ6UZhj4onezo9QWApEriFqNi8kdMOEdwPHpOQghmdXWRc2xKjsx-3k2L5VktzwSocPGfOd20vi2_KD-inzOlQ2xtlkHVEG4fxX20gOv8_CQN4p9B7PnlmX_Kkj16GmXpRPUS5mh4KekCz3gZKbDOwiYQomLaj59W4a8o0We7-oYovovDu3STfEtEPw2J4zrSgGJjiNKYkKMObDc1kI"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-outline-variant border-2 border-white rounded-full"></div>
+</div>
+<div class="flex-1">
+<p class="text-body-md font-semibold text-on-surface leading-none">Emily Watson</p>
+<p class="text-[12px] text-on-surface-variant">Silver Member • 4 Orders</p>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-container/20 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+<button class="w-full mt-8 py-3 rounded-full border border-primary-container text-primary font-bold text-label-md hover:bg-primary-container/10 transition-all">
+                            Manage All Users
+                        </button>
+</div>
+<!-- Quick Action Card -->
+<div class="bg-primary text-on-primary rounded-xl p-8 relative overflow-hidden shadow-xl shadow-primary/30">
+<div class="relative z-10">
+<h3 class="text-headline-md font-headline-md mb-2">Sustainable Packing</h3>
+<p class="text-primary-fixed leading-snug mb-6">32 orders are ready for biodegradable packing. Process them now to meet daily targets.</p>
+<button class="bg-white text-primary px-6 py-3 rounded-full font-bold text-label-md shadow-lg shadow-black/10 hover:scale-105 transition-transform">
+                                Start Packing Flow
+                            </button>
+</div>
+<!-- Background Accent -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-surface-tint rounded-full opacity-50 blur-3xl"></div>
+<span class="material-symbols-outlined absolute right-4 top-4 text-7xl opacity-10 rotate-12" style="font-variation-settings: 'FILL' 1;">package_2</span>
+</div>
+</div>
+</div>
+<!-- Dashboard Footer -->
+<footer class="mt-20 py-12 border-t border-secondary-container/20 flex flex-col items-center gap-4">
+<div class="flex gap-8">
+<a class="text-label-md text-outline hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-label-md text-outline hover:text-primary transition-colors" href="#">System Status</a>
+<a class="text-label-md text-outline hover:text-primary transition-colors" href="#">Support Hub</a>
+</div>
+<p class="text-label-md text-outline/60">© 2024 FreshBasket Market. Sustainably Sourced. System V4.0.12</p>
+</footer>
+</main>
+</div>
+<!-- Floating Action Button for Global Add -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-on-primary-container text-primary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

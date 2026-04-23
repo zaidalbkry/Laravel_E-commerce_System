@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1d",
+                        "surface-tint": "#1b6b4f",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#416656",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#294e3f",
+                        "outline-variant": "#bec9c2",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#c3ecd7",
+                        "on-tertiary-fixed": "#161c22",
+                        "on-secondary-fixed": "#002115",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed-variant": "#00513a",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9fa",
+                        "on-secondary-container": "#476c5b",
+                        "primary-fixed-dim": "#8bd6b4",
+                        "on-primary-container": "#247156",
+                        "inverse-primary": "#8bd6b4",
+                        "outline": "#6f7973",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002115",
+                        "tertiary-container": "#dee4ec",
+                        "secondary-fixed-dim": "#a8cfbc",
+                        "on-surface-variant": "#3f4943",
+                        "on-surface": "#191c1d",
+                        "primary-container": "#a7f3d0",
+                        "surface-dim": "#d9dadb",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "primary": "#1b6b4f",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary": "#595f66",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed": "#a6f2cf",
+                        "on-tertiary-container": "#5f666c",
+                        "tertiary-fixed": "#dde3eb",
+                        "secondary-fixed": "#c3ecd7",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "2rem",
+                        "xs": "0.5rem",
+                        "xl": "4rem",
+                        "sm": "1rem",
+                        "unit": "4px",
+                        "md": "1.5rem",
+                        "lg": "2.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.025em", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.025em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f8f9fa; /* creamy off-white background */
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-emerald-50/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-emerald-100/50 dark:border-emerald-900/30 shadow-sm shadow-emerald-200/20">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-emerald-800 dark:text-emerald-200 font-headline-md">FreshBasket</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex items-center gap-6">
+<a class="font-headline-md text-body-md text-emerald-600/70 dark:text-emerald-400/70 hover:bg-emerald-100/50 transition-colors px-3 py-1 rounded-full" href="#">Home</a>
+<a class="font-headline-md text-body-md text-emerald-600/70 dark:text-emerald-400/70 hover:bg-emerald-100/50 transition-colors px-3 py-1 rounded-full" href="#">Browse</a>
+<a class="font-headline-md text-body-md text-emerald-700 dark:text-emerald-300 font-bold px-3 py-1 rounded-full" href="#">Orders</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-emerald-100/50 text-emerald-900 dark:text-emerald-100 active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+</button>
+<button class="p-2 rounded-full hover:bg-emerald-100/50 text-emerald-900 dark:text-emerald-100 active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12 min-h-screen">
+<!-- Hero Section -->
+<div class="mb-12">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">My Orders</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Track, manage, and review your FreshBasket hauls.</p>
+</div>
+<!-- Orders Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Order Card 1: Pending -->
+<div class="bg-white rounded-xl p-8 shadow-[0_10px_40px_rgba(167,243,208,0.15)] border border-emerald-50 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-md text-label-md text-primary-fixed-dim bg-primary-container px-4 py-1 rounded-full uppercase mb-3 inline-block">Pending</span>
+<h3 class="font-headline-md text-headline-md">Order #FB-9021</h3>
+<p class="font-body-md text-body-md text-outline">Placed on Oct 24, 2024</p>
+</div>
+<div class="text-right">
+<span class="font-display-lg text-headline-lg text-on-surface">$54.20</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 py-4 border-y border-emerald-50">
+<div class="flex items-center gap-3">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="close-up of fresh organic strawberries with vibrant red color and green stems in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuCmoAqJDtjNX9ARA0kA8WZo6KUDl1T0EorJXr0r9lvhtt6fYPEfNYMQIKuGOH1At8LZiURugGLFY6IPeOv0GxkVAKaaXhazGQbN5sJHgbI357PbzUOZ1KzhvM4S2R09_vbCKGgVm4bfieYG-N1EPXyPyjw96T6pWpQ-JhAiAHlLSMF2chmc8fJZZyuD3tXo85GwhjPWcnQeyeM1vrPCroI5v7pOOqrZC9F4XPkG3T1bCaOWGohAv2uDQJr_pBWwuZxRIqs1gf1DQ"/>
+<div>
+<p class="font-label-md text-label-md">Organic Strawberries</p>
+<p class="font-body-md text-sm text-outline">1 lb</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="fresh green organic kale leaves with crisp texture on a light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqU6zddmh4VzUadDPNZuTR0KoEHDKCECyXViU3v1IpU-W1OBf7NuqkxzJGU7wDeNDkYY4dcnaDT6kIenTjvCnotFncNDoLvzgVBhGWNDGwZ816w5OZq1Ajps2g7gT4cUm2FA3aGSV9FUN_8xtq3NSdzFdu8GeQhib_7pFXnVoDDgj-ZXy6KaJNTnHn-B4iRYBfu7k7u4vB18eRtes3kx9mCcFSC3SdohiRagaLqiRwdOVSq-n9uFgHAJvh2P-VgUrnC7oryQ_Tzbs"/>
+<div>
+<p class="font-label-md text-label-md">Curly Kale</p>
+<p class="font-body-md text-sm text-outline">1 bunch</p>
+</div>
+</div>
+<div class="flex items-center justify-center w-16 h-16 rounded-lg bg-surface-container text-outline font-label-md">
+                        +2
+                    </div>
+</div>
+<div class="flex gap-4 mt-auto">
+<button class="flex-1 bg-primary-container text-on-primary-container font-label-md py-4 rounded-full hover:shadow-lg transition-all active:scale-95">
+                        Track Delivery
+                    </button>
+<button class="flex-1 border border-error text-error font-label-md py-4 rounded-full hover:bg-error-container/20 transition-all active:scale-95">
+                        Cancel Order
+                    </button>
+</div>
+</div>
+<!-- Order Card 2: Delivered -->
+<div class="bg-white rounded-xl p-8 shadow-[0_10px_40px_rgba(167,243,208,0.15)] border border-emerald-50 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-md text-label-md text-secondary bg-secondary-container px-4 py-1 rounded-full uppercase mb-3 inline-block">Delivered</span>
+<h3 class="font-headline-md text-headline-md">Order #FB-8842</h3>
+<p class="font-body-md text-body-md text-outline">Placed on Oct 20, 2024</p>
+</div>
+<div class="text-right">
+<span class="font-display-lg text-headline-lg text-on-surface">$128.50</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 py-4 border-y border-emerald-50">
+<div class="flex items-center gap-3">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="washed orange carrots with green tops on a white surface with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEoCtVjx2JWIJTv1pY6zIVOPwaKfrj7BTe6jWZRxrsCL15zAGh5LRo72meraqaEN_ji9wlZ-Tb-mPNB-jr5sxK8kUtGnMEFjppT5Nl0f_4rcnoX66c9Ir1bpXCVzRApdvd0djS1x4jvoS8saYWkIpd57u2PluPUzd5V4PSH_pV58GYvPt_L0viDriLoSdUhc8o8WE-5SzFeU6XlMC4L-iQlsCb_f3OKNHIdLqnvqNyWcHkGNCmCdlGJbgB2Fg-Fgy8CSP2fIn8Rbk"/>
+<div>
+<p class="font-label-md text-label-md">Heirloom Carrots</p>
+<p class="font-body-md text-sm text-outline">2 lbs</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="fresh sliced avocado on a light wooden board with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4cjePEt0Jh-epYk9cBT3Q5_PWskf4fltNqAXsDRETJHpSTvnaUQVehz1KxBBiUPGC5zZgTLUjpgLv6MvUnPzSvUZKswZjcbPmwp8rx6TTTvWnSO0Y2WWC5mY9LBpY_FsEhNdtWhFj1yoJolbttmkJrctDTqOw_m7UuDkatnut8MFokq4SSlrpmw6xJYEjQksAe89EAawdn5QickKN5OfL1W5UKjPwuBi3uYR9iwhqgdu6kTe8wk_Z1DpKjUBj9AHVTTqhhSEY6VM"/>
+<div>
+<p class="font-label-md text-label-md">Hass Avocado</p>
+<p class="font-body-md text-sm text-outline">4 count</p>
+</div>
+</div>
+<div class="flex items-center justify-center w-16 h-16 rounded-lg bg-surface-container text-outline font-label-md">
+                        +8
+                    </div>
+</div>
+<div class="flex gap-4 mt-auto">
+<button class="flex-1 bg-surface-container text-on-surface-variant font-label-md py-4 rounded-full hover:bg-surface-variant transition-all active:scale-95">
+                        View Receipt
+                    </button>
+<button class="flex-1 bg-primary text-white font-label-md py-4 rounded-full hover:shadow-lg transition-all active:scale-95">
+                        Reorder Items
+                    </button>
+</div>
+</div>
+<!-- Order Card 3: Delivered -->
+<div class="bg-white rounded-xl p-8 shadow-[0_10px_40px_rgba(167,243,208,0.15)] border border-emerald-50 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-md text-label-md text-secondary bg-secondary-container px-4 py-1 rounded-full uppercase mb-3 inline-block">Delivered</span>
+<h3 class="font-headline-md text-headline-md">Order #FB-8201</h3>
+<p class="font-body-md text-body-md text-outline">Placed on Oct 15, 2024</p>
+</div>
+<div class="text-right">
+<span class="font-display-lg text-headline-lg text-on-surface">$42.15</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 py-4 border-y border-emerald-50">
+<div class="flex items-center gap-3">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="fresh loaf of artisan sourdough bread with flour dusting on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCr58pGxDWRKCCHqWKKenHd_laoECuxQ9qTgkaIIjGp_Lb72KFPAOwv_yiz1CvpEk-asQOCr_b1vKh_pF5m8g358ubfyioUC4fx66-cWihrgaa91HW1eRstgfUTkNOAkYbyCI-fjpvsdFeCDeZe2hJhiCQQGDWqxpMZ2UXGLp6v3qQvmjWSQO_KFkiEIsL4azShpMDLERhADquwcF1mDb-JpwTbOIFUcvYkXV3TmLn_vmLmR-IAbWxExtSQGjDXgKCo4M8CD3BwS0"/>
+<div>
+<p class="font-label-md text-label-md">Sourdough Loaf</p>
+<p class="font-body-md text-sm text-outline">1 unit</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="bunch of fresh spinach leaves in a soft light environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhBGzXrch-VmltUMn1gu0q-ifGf7ovZrTzRssFLMX0rWpImgReE9ePSIYGTSPIu8Q9LI5k6hlcnW-c-mk--YdrIKinOdeJ3INDNWKzaU4mDjhLkCw5pHJmGYJH_EhB78PV3uUuIwozB5hVMKZCLCM2VnuI6vEvIZo3y94RGx3i_TU1Bj5YScSFrp5XQN5BPTkGFzJrAIqUT3nf0IWHrde47xGgAp0SAgQxD0GpRvAb5AEIlVd2-pn6uxAvlMvH8uHWAQU1d1TMOA8"/>
+<div>
+<p class="font-label-md text-label-md">Baby Spinach</p>
+<p class="font-body-md text-sm text-outline">5 oz</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 mt-auto">
+<button class="flex-1 bg-surface-container text-on-surface-variant font-label-md py-4 rounded-full hover:bg-surface-variant transition-all active:scale-95">
+                        View Receipt
+                    </button>
+<button class="flex-1 bg-primary text-white font-label-md py-4 rounded-full hover:shadow-lg transition-all active:scale-95">
+                        Reorder Items
+                    </button>
+</div>
+</div>
+<!-- Info Bento Tile -->
+<div class="bg-emerald-100 rounded-xl p-8 flex flex-col justify-center items-center text-center gap-4 border border-emerald-200/50">
+<div class="w-20 h-20 rounded-full bg-white flex items-center justify-center text-emerald-600 mb-2">
+<span class="material-symbols-outlined text-4xl" data-icon="eco">eco</span>
+</div>
+<h3 class="font-headline-md text-emerald-900">Your Impact</h3>
+<p class="font-body-md text-emerald-800/70 max-w-xs">By choosing FreshBasket, you've helped save 14kg of carbon emissions this month. Keep it up!</p>
+<button class="mt-4 font-label-md text-emerald-900 underline decoration-2 decoration-emerald-300 hover:text-emerald-700 transition-colors">
+                    View Sustainability Report
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center gap-6 px-8 py-12 mt-20 bg-emerald-50 dark:bg-slate-900 border-t border-emerald-100 dark:border-emerald-800">
+<div class="text-lg font-black text-emerald-900 dark:text-emerald-100 font-headline-md">FreshBasket</div>
+<div class="flex gap-8">
+<a class="font-body-md text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-colors" href="#">Terms</a>
+<a class="font-body-md text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-colors" href="#">Sustainability</a>
+</div>
+<p class="font-body-md text-sm text-emerald-800 dark:text-emerald-200">© 2024 FreshBasket Market. Sustainably Sourced.</p>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-t border-emerald-50 shadow-[0_-10px_40px_rgba(167,243,208,0.15)] rounded-t-[40px]">
+<div class="flex flex-col items-center justify-center text-emerald-400 dark:text-emerald-600 px-5 py-2 hover:bg-emerald-50 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold tracking-tight">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-400 dark:text-emerald-600 px-5 py-2 hover:bg-emerald-50 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="search_check">search_check</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold tracking-tight">Browse</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-100 rounded-full px-5 py-2 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="local_offer" style="font-variation-settings: 'FILL' 1;">local_offer</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold tracking-tight">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-400 dark:text-emerald-600 px-5 py-2 hover:bg-emerald-50 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-bold tracking-tight">Cart</span>
+</div>
+</nav>
+</body></html>

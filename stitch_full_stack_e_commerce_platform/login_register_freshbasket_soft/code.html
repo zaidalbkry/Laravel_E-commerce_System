@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FreshBasket - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fa; /* background from config */
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 40px rgba(167, 243, 208, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1d",
+                        "surface-tint": "#1b6b4f",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#416656",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#294e3f",
+                        "outline-variant": "#bec9c2",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#c3ecd7",
+                        "on-tertiary-fixed": "#161c22",
+                        "on-secondary-fixed": "#002115",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed-variant": "#00513a",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9fa",
+                        "on-secondary-container": "#476c5b",
+                        "primary-fixed-dim": "#8bd6b4",
+                        "on-primary-container": "#247156",
+                        "inverse-primary": "#8bd6b4",
+                        "outline": "#6f7973",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002115",
+                        "tertiary-container": "#dee4ec",
+                        "secondary-fixed-dim": "#a8cfbc",
+                        "on-surface-variant": "#3f4943",
+                        "on-surface": "#191c1d",
+                        "primary-container": "#a7f3d0",
+                        "surface-dim": "#d9dadb",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "primary": "#1b6b4f",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary": "#595f66",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed": "#a6f2cf",
+                        "on-tertiary-container": "#5f666c",
+                        "tertiary-fixed": "#dde3eb",
+                        "secondary-fixed": "#c3ecd7",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "2rem",
+                        "xs": "0.5rem",
+                        "xl": "4rem",
+                        "sm": "1rem",
+                        "unit": "4px",
+                        "md": "1.5rem",
+                        "lg": "2.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.025em", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.025em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar - Execution from JSON -->
+<header class="bg-emerald-50/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-emerald-100/50 dark:border-emerald-900/30 shadow-sm shadow-emerald-200/20">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-emerald-800 dark:text-emerald-200 font-['Plus_Jakarta_Sans']">
+                FreshBasket
+            </div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-emerald-900 dark:text-emerald-100 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/50 transition-colors rounded-full Active: scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+</button>
+<button class="p-2 text-emerald-900 dark:text-emerald-100 hover:bg-emerald-100/50 dark:hover:bg-emerald-800/50 transition-colors rounded-full Active: scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-4 py-xl md:py-20">
+<div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Left Side: Illustration and Content -->
+<div class="hidden lg:flex flex-col gap-8 pr-8">
+<div class="relative w-full aspect-square bg-secondary-container/30 rounded-xl overflow-hidden flex items-center justify-center p-12">
+<img alt="Fresh produce basket" class="w-full h-full object-cover rounded-lg mix-blend-multiply opacity-80" data-alt="Minimalist organic scene featuring a wicker basket overflowing with vibrant kale, bright citrus, and crisp apples in soft natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR50yKuHJodawu9HI2yTSMoPUhyUd-ff_uTAKpqqpBzPnpv7TCdqOAwgGz2JVyuj39G5M4wIr-ylZI-UYQzuL2eluFAQWb7Ex3LpkB2HaYAHah0iIHZ2UDw-li75qQz0MISiVd5ogHGpTJalm7wFHIdM0qqPFH0O8BdfaqdTwKnpO7lyO8sZ6TBwwfHPZNBgrBMED1mzLJ1_XdhFaHBUpyK80FK3Nygim6NOU8ZUN8Z6NBcEerIgWNMqvAUxPDoiL1Dpgp9EX-xno"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent pointer-events-none"></div>
+</div>
+<div class="space-y-4">
+<h1 class="font-display-lg text-display-lg text-on-surface">Freshness delivered to your doorstep.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Join our community of organic food lovers and start your healthy journey today with sustainably sourced basket.</p>
+</div>
+</div>
+<!-- Right Side: Combined Form -->
+<div class="w-full">
+<div class="bg-surface-container-lowest soft-shadow p-8 md:p-12 rounded-xl border border-primary-container/20">
+<!-- Form Header Tabs -->
+<div class="flex p-1 bg-surface-container-low rounded-full mb-10">
+<button class="flex-1 py-3 px-6 rounded-full font-label-md text-label-md bg-primary text-on-primary transition-all">Login</button>
+<button class="flex-1 py-3 px-6 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all">Register</button>
+</div>
+<!-- Input Group -->
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant px-4" for="email">Email Address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<input class="w-full pl-14 pr-6 py-4 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 text-body-md font-body-md placeholder:text-outline-variant transition-all" id="email" placeholder="hello@freshbasket.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center px-4">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<a class="font-label-md text-label-md text-primary" href="#">Forgot?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<input class="w-full pl-14 pr-6 py-4 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 text-body-md font-body-md placeholder:text-outline-variant transition-all" id="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 py-2">
+<input class="w-5 h-5 rounded-md border-outline-variant text-primary focus:ring-primary bg-surface-container-low" id="remember" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface-variant" for="remember">Remember me</label>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary rounded-full font-headline-md text-headline-md shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95" type="submit">
+                            Sign In
+                        </button>
+</form>
+<!-- Divider -->
+<div class="relative my-10">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-surface-container-high"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-4 bg-surface-container-lowest text-outline font-label-md">OR CONTINUE WITH</span>
+</div>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-4 border border-outline-variant rounded-full font-label-md text-label-md text-on-surface hover:bg-surface-container transition-all">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHRurIyqhIwfERT1Ss9WY4eZWVOzvMEctCUkgj-0OyTK_wEUTyC7GHIgBQbNPBOFlv1BhgbZNC4ex8SNCyhUUmjydi1wiSskdV_LrIaB8n-e1GKYd9fdLsHrBa65Ob74_Rtryu6ui51vVkSxbyTlvCN20xecmWDuW52NXFCGsIO_hZX4rbrIX4A1BsiaOQ9a0nIyHlbs6CWhcTHFx9NTbAusKSdJO0wX1oQGA5bVsIUmGQW2nmTQPI1HPco4BY3HMAoSAt7dp5nwM"/>
+                            Google
+                        </button>
+<button class="flex items-center justify-center gap-3 py-4 border border-outline-variant rounded-full font-label-md text-label-md text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-on-surface" data-icon="apple">ios</span>
+                            Apple
+                        </button>
+</div>
+</div>
+<p class="mt-8 text-center font-body-md text-body-md text-on-surface-variant">
+                    By continuing, you agree to FreshBasket's <a class="text-primary font-semibold underline underline-offset-4 decoration-primary-container" href="#">Terms of Service</a> and <a class="text-primary font-semibold underline underline-offset-4 decoration-primary-container" href="#">Privacy Policy</a>.
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer - Execution from JSON -->
+<footer class="bg-emerald-50 dark:bg-slate-900 full-width py-12 mt-20 border-t border-emerald-100 dark:border-emerald-800">
+<div class="w-full flex flex-col items-center gap-6 px-8 max-w-7xl mx-auto">
+<div class="text-lg font-black text-emerald-900 dark:text-emerald-100 font-['Plus_Jakarta_Sans']">
+                FreshBasket
+            </div>
+<div class="flex gap-8 flex-wrap justify-center">
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-all ease-in-out duration-300" href="#">Privacy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-all ease-in-out duration-300" href="#">Terms</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-emerald-600/60 hover:text-emerald-900 underline decoration-2 decoration-emerald-200 transition-all ease-in-out duration-300" href="#">Sustainability</a>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-emerald-800 dark:text-emerald-200 text-center">
+                © 2024 FreshBasket Market. Sustainably Sourced.
+            </p>
+</div>
+</footer>
+<!-- BottomNavBar Suppressed according to Transactional/Focused Journey rule -->
+</body></html>

@@ -52,11 +52,7 @@ Route::get('/', function () {
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
-Route::get('/all-products', function () {
-    $categories = Category::with('products')->get();
-
-    return view('frontend.all-products', compact('categories'));
-})->name('allProducts');
+Route::get('/all-products', [ProductController::class, 'index3'])->name('allProducts');
 
 // إضافة تعليق
 Route::post('/product/{id}/comment', [CommentController::class, 'store'])
@@ -99,7 +95,7 @@ Route::middleware(['auth', 'employeeORadmin'])->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
 ;
 
-Route::post('/admin/send-notifications', [NotificationController::class, 'send'])
+Route::post('/admin/send-notifications', [NotificationsController::class, 'storeNotification'])
     ->name('admin.notifications.send');
 
     // Users
@@ -140,11 +136,6 @@ Route::middleware(['auth'])->group(function () {
         return view('frontend.my-orders', compact('orders'));
     })->name('user.orders');
 
-    // My Favorite page route
-    Route::get('/my-favorite', function () {
-        return view('frontend.my-favorite');
-    })->name('user.favorite');
-
     // My Notifications page route
     Route::get('/my-notifications', function () {
         return view('frontend.my-notifications');
@@ -156,7 +147,7 @@ Route::get('/favorite/products', [ProductController::class, 'favoriteProducts'])
 
 Route::post('/submit-review', [ReviewController::class, 'store'])->name('review.store');
 
-Route::get('/my-favorite', [FavoriteController::class, 'favoriteProducts'])->name('favorites.list');
+Route::get('/my-favorite', [FavoriteController::class, 'favoriteProducts'])->name('user.favorite');
 
 Route::put('/profile/update', [UserController::class, 'update_profile'])->name('profile.update');
 
@@ -168,7 +159,6 @@ Route::get('/notifications', [NotificationsController::class, 'index'])->name('c
 Route::post('/store-order', [OrderController::class, 'store'])->name('order.store');
 
 Route::post('/password/update', [PasswordController::class, 'update'])->name('password.update');
-Route::get('/all-products', [ProductController::class, 'index3'])->name('products.index3');
 Route::get('/filtered-products', [ProductController::class, 'filteredResults'])->name('products.filtered');
 
 
